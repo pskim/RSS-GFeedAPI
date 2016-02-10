@@ -4,7 +4,7 @@ function initialize() {
   feed.setResultFormat(google.feeds.Feed.JSON_FORMAT)
   feed.load(function(result){
     if (!result.error) {
-      console.log(result.feed.entries[1])
+      console.log(result.feed.entries[2])
          var container = document.getElementById("load-here");
          var entry, a, li, p;
          for (var i = 0; i < result.feed.entries.length; i++) {
@@ -14,7 +14,7 @@ function initialize() {
            var theTemplate = Handlebars.compile(theTemplateScript);
            var theCompiledHtml = theTemplate(entry);
 
-             $('.load-here').append(theCompiledHtml);
+           $('.load-here').append(theCompiledHtml);
 
           //  a = document.createElement("a");
           //  p = document.createElement("p")
