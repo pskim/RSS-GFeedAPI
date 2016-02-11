@@ -7,16 +7,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link rel="stylesheet" href="main.css">
 
-
-
-
-
 </head>
-<body class="light-blue lighten-5">
+<body>
 
   <nav>
-    <div class="nav-wrapper light-blue lighten-1">
-      <a href="" class="brand-logo center">Feed Me RSS</a>
+    <div class="nav-wrapper red darken-4">
+      <a href="" class="brand-logo center">TED TALKS </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -44,24 +40,18 @@
   </nav>
  navbar ends -->
 
+  <section class="container">
+    <ul class="collection with-header z-depth-1 responsive-table load-here">
+      <li class="collection-header center red-text text-darken-2"><h4>List Of all the Talks you will ever need</h4></li>
+    </ul>
+  </section>
 
-   <script id="feed-template" type="text/x-handlebars-template">
-     <a href="#!" class="collection-item light-blue-text text-darken-2">{{title}}<p class="hide description text-color">{{content}}</p></a>
-   </script>
-
-    <section class="container">
-      <ul class="collection with-header z-depth-1 responsive-table load-here">
-        <li class="collection-header light-blue-text text-darken-1"><h4>FEED</h4></li>
-
-      </ul>
-    </section>
-
-  <footer class="page-footer light-blue lighten-1">
+  <footer class="page-footer red darken-4">
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">RSS Feed with GFeedAPI</h5>
-            <p class="grey-text text-lighten-4">Utilized Google Feed API with jQuery, Handlebars.js, and Materialize css. Content originally from another RSS of TedTalks. Link to <a href="http://feeds.feedburner.com/tedtalks_video">Original TedTalkRSS</a></p>
+            <p class="grey-text text-lighten-4">Utilized Google Feed API with jQuery, Handlebars.js, and Materialize css. Content originally from another RSS of TedTalks. Link to <a class="red-text text-accent-1" href="http://feeds.feedburner.com/tedtalks_video">Original TedTalkRSS</a></p>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Links</h5>
@@ -80,31 +70,33 @@
         </div>
     </footer>
 
+    <!-- handlebars template -->
+    <script id="feed-template" type="text/x-handlebars-template">
+      <li class="collection-item avatar">
+        <i class="material-icons circle red">play_arrow</i>
+        <h6 class="title">{{title}}</h6>
+        <h6>{{author}}</h6>
+        <h6>{{publishedDate}}</h6>
+        <br>
 
+        </p>
+        <div class="snippet">{{contentSnippet}}</div>
+
+        <div class="onClickShow hide">
+          <p class="description text-color">{{content}}</p>
+          <p class="">linktovid</p>
+        </div>
+
+      </li>
+    </script>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script type="text/javascript" src="js/materialize.min.js"></script>
 <script src="https://www.google.com/jsapi"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-
-<script src="loadAPIfeed.js"></script>
-
-<script src="initialize.js"></script>
-<script src="clickHandler.js"></script>
-<script src="app.js"></script>
-
+<script src="./src/HandleBars.js"></script>
+<script src="./src/GoogleFeedAPI.js"></script>
+<script src="./src/Handlers.js"></script>
+<script src="./src/App.js"></script>
 
 </html>
-
-
-
-<!-- <li class="collection-item avatar">
-  <a href="#"><i class="material-icons circle red">play_arrow</i></a>
-  <span class="title">Title</span>
-  <p>First Line <br>
-     Second Line
-  </p>
-
-  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-</li> -->
