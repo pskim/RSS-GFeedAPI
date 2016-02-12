@@ -1,5 +1,5 @@
-GoogleFeed.loadApiData()
+GoogleFeed.loadApiData();
 $(document).ready(function(){
-  GoogleFeed.runAfterLoad()
-  Handler.clickHandler()
+  GoogleFeed.runAfterLoad();
+  Handler.clickHandler();
 })
