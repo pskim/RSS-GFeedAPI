@@ -1,9 +1,9 @@
 var HandleBars = (function(){
   var templateScript, template, compiledHtml;
   var container = $('.load-here');
-
+  var handleBarsTemplate = $("#feed-template")
   function createThis(entry){
-    templateScript = $("#feed-template").html();
+    templateScript = handleBarsTemplate.html();
     template = Handlebars.compile(templateScript);
     var cleanedEntries = createObjectWithCleanedData(entry);
     compiledHtml = template(cleanedEntries);
