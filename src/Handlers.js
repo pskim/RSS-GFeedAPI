@@ -3,9 +3,9 @@ var Handler = (function(){
 
   function clickHandler(){
     $(".load-here").on('click','li',function(){
-      description = $( this ).find(".onClickShow")
+      description = $( this ).find(".onClickShow");
       description.toggleClass( "hide" );
-      $(this).find(".snippet").toggleClass("hide")
+      $(this).find(".snippet").toggleClass("hide");
     })
   }
   return {
