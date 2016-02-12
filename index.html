@@ -12,7 +12,7 @@
 
   <nav>
     <div class="nav-wrapper red darken-4">
-      <a href="" class="brand-logo center">TED TALKS </a>
+      <a href="" class="brand-logo center">TED TALKS</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -20,29 +20,9 @@
     </div>
   </nav>
 
-  <!-- <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-      <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
- navbar ends -->
-
-  <section class="container">
+  <section class="container top-padding bottom-padding">
     <ul class="collection with-header z-depth-1 responsive-table load-here">
-      <li class="collection-header center red-text text-darken-2"><h4>List Of all the Talks you will ever need</h4></li>
+      <li class="collection-header center  grey-text text-lighten"><h4>Ideas Worth Spreading</h4></li>
     </ul>
   </section>
 
@@ -72,19 +52,18 @@
 
     <!-- handlebars template -->
     <script id="feed-template" type="text/x-handlebars-template">
-      <li class="collection-item avatar">
-        <i class="material-icons circle red">play_arrow</i>
-        <h6 class="title">{{title}}</h6>
-        <h6>{{author}}</h6>
-        <h6>{{publishedDate}}</h6>
-        <br>
-
+      <li class="collection-item">
+        <h6 class="title large bold">{{title}}</h6>
+        <h6 class="small italic">{{author}}</h6>
+        <h6 class="small italic">{{publishedDate}}</h6>
         </p>
-        <div class="snippet">{{contentSnippet}}</div>
+        <div class="snippet medium content-top-margin">{{contentSnippet}}</div>
 
         <div class="onClickShow hide">
-          <p class="description text-color">{{content}}</p>
-          <p class="">linktovid</p>
+          <p class="description text-color medium content-top-margin">{{content}}</p>
+          <video class="responsive-video" width="853" height="480" preload="metadata" controls>
+            <source src="{{url}}" type="video/mp4">
+          </video>
         </div>
 
       </li>
@@ -95,6 +74,8 @@
 <script src="https://www.google.com/jsapi"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 <script src="./src/HandleBars.js"></script>
+<script src="./src/Preload"></script>
+
 <script src="./src/GoogleFeedAPI.js"></script>
 <script src="./src/Handlers.js"></script>
 <script src="./src/App.js"></script>

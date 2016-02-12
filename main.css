@@ -1,3 +1,42 @@
-.hide{
+/*click handler*/
+.hide {
   display:none;
+}
+
+/*font*/
+.small {
+  font-size: 70%;
+}
+
+.medium {
+  font-size: 90%;
+}
+
+.large {
+  font-size: 150%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+/*padding*/
+.top-padding {
+  padding-top: 2%;
+}
+
+.bottom-padding {
+  padding-bottom: 5%;
+}
+
+.padding-li {
+  padding-left: 1%;
+  padding-right: 1%;
+}
+.content-top-margin {
+  margin-top: 2%;
 }

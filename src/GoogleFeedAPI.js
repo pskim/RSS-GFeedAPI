@@ -13,8 +13,6 @@ var GoogleFeed = (function(){
     feed.setResultFormat(google.feeds.Feed.JSON_FORMAT)
     feed.load(function(result){
       if (!result.error) {
-        // breakthisintomorefunction
-        console.log(result.feed.entries[2])
            var container = document.getElementById("load-here");
            for (var i = 0; i < result.feed.entries.length; i++) {
              entry = result.feed.entries[i];
