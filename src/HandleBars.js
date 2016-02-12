@@ -1,31 +1,29 @@
 var HandleBars = (function(){
   var templateScript, template, compiledHtml
   var container = $('.load-here')
+  var cleanedEntryObject = new Object
 
   function createThis(entry){
     templateScript = $("#feed-template").html();
     template = Handlebars.compile(templateScript);
-    var cleanedEntryObject = new Object
 
-    // make into another specific function that cleans title and author
-    var titleAuth = filterTitleAuthor(entry.title)
-    cleanedEntryObject.title = titleAuth[0]
-    cleanedEntryObject.author = titleAuth[1]
+    var titleAndAuthor = separateAuthorAndTitle(entry.title)
+    cleanedEntryObject.title = titleAndAuthor[0]
+    cleanedEntryObject.author = titleAndAuthor[1]
 
-    // function cleans content of img tag
     cleanedEntryObject.content = removeImgTagFromContent(entry.content)
 
-    // add contentsnippet
     cleanedEntryObject.contentSnippet = entry.contentSnippet
 
-    // function that removes seconds hours etc from date content
     cleanedEntryObject.publishedDate = removeHoursSecondsAndTimeZone(entry.publishedDate)
+
+    cleanedEntryObject.url = entry.mediaGroups[0].contents[0].url
 
     compiledHtml = template(cleanedEntryObject);
     container.append(compiledHtml);
     }
 
-  function filterTitleAuthor(titleAuthor){
+  function separateAuthorAndTitle(titleAuthor){
     var container = []
     titleAuthorArray = titleAuthor.split("|")
     titleAuthorArray.forEach(function(string){

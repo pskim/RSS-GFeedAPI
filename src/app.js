@@ -3,4 +3,3 @@ $(document).ready(function(){
   GoogleFeed.runAfterLoad()
   Handler.clickHandler()
 })
- 
