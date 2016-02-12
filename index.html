@@ -19,36 +19,49 @@
       </ul>
     </div>
   </nav>
+  <!-- end nav -->
 
   <section class="container top-padding bottom-padding">
     <ul class="collection with-header z-depth-1 responsive-table load-here">
       <li class="collection-header center  grey-text text-lighten"><h4>Ideas Worth Spreading</h4></li>
     </ul>
   </section>
+  <!-- end list of ted talks -->
 
   <footer class="page-footer red darken-4">
     <div class="container">
       <div class="row">
+
         <div class="col l6 s12">
           <h5 class="white-text">RSS Feed with GFeedAPI</h5>
-            <p class="grey-text text-lighten-4">Utilized Google Feed API with jQuery, Handlebars.js, and Materialize css. Content originally from another RSS of TedTalks. Link to <a class="red-text text-accent-1" href="http://feeds.feedburner.com/tedtalks_video">Original TedTalkRSS</a></p>
-            </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Links</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/pskim1">LinkedIn</a></li>
-                <li><a class="grey-text text-lighten-3" href="https://twitter.com/peetear_kim">Twitter</a></li>
-                <li><a class="grey-text text-lighten-3" href="https://github.com/pskim">Github</a></li>
-                <li><a class="grey-text text-lighten-3" href="https://google.com">Google</a></li>
-              </ul>
-            </div>
-          </div>
+          <p class="grey-text text-lighten-4">Utilized Google Feed API with jQuery, Handlebars.js, and Materialize css. Content originally from another RSS of TedTalks. Link to <a class="red-text text-accent-1" href="http://feeds.feedburner.com/tedtalks_video">Original TedTalkRSS</a></p>
         </div>
+        <!-- end description section -->
+
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/pskim1">LinkedIn</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://twitter.com/peetear_kim">Twitter</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://github.com/pskim">Github</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://google.com">Google</a></li>
+            </ul>
+        </div>
+        <!-- end links -->
+
+      </div>
+    </div>
+    <!-- end container -->
+
       <div class="footer-copyright">
         <div class="container">
         Made By Peter Kim
         </div>
+      </div>
+      <!-- end copy right -->
+
     </footer>
+    <!-- end footer -->
 
     <!-- handlebars template -->
     <script id="feed-template" type="text/x-handlebars-template">
@@ -74,8 +87,6 @@
 <script src="https://www.google.com/jsapi"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 <script src="./src/HandleBars.js"></script>
-<script src="./src/Preload"></script>
-
 <script src="./src/GoogleFeedAPI.js"></script>
 <script src="./src/Handlers.js"></script>
 <script src="./src/App.js"></script>
