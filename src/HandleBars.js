@@ -1,25 +1,27 @@
 var HandleBars = (function(){
   var templateScript, template, compiledHtml
   var container = $('.load-here')
-  var cleanedEntryObject = new Object
+  // var cleanedEntryObject = new Object
 
   function createThis(entry){
     templateScript = $("#feed-template").html();
     template = Handlebars.compile(templateScript);
 
-    var titleAndAuthor = separateAuthorAndTitle(entry.title)
-    cleanedEntryObject.title = titleAndAuthor[0]
-    cleanedEntryObject.author = titleAndAuthor[1]
+    // create a function that adds all the clean data to object
+    // var titleAndAuthor = separateAuthorAndTitle(entry.title)
+    // cleanedEntryObject.title = titleAndAuthor[0]
+    // cleanedEntryObject.author = titleAndAuthor[1]
+    //
+    // cleanedEntryObject.content = removeImgTagFromContent(entry.content)
+    //
+    // cleanedEntryObject.contentSnippet = entry.contentSnippet
+    //
+    // cleanedEntryObject.publishedDate = removeHoursSecondsAndTimeZone(entry.publishedDate)
+    //
+    // cleanedEntryObject.url = entry.mediaGroups[0].contents[0].url
 
-    cleanedEntryObject.content = removeImgTagFromContent(entry.content)
-
-    cleanedEntryObject.contentSnippet = entry.contentSnippet
-
-    cleanedEntryObject.publishedDate = removeHoursSecondsAndTimeZone(entry.publishedDate)
-
-    cleanedEntryObject.url = entry.mediaGroups[0].contents[0].url
-
-    compiledHtml = template(cleanedEntryObject);
+    var cleanedEntries = createObjectWithCleanedData(entry)
+    compiledHtml = template(cleanedEntries);
     container.append(compiledHtml);
     }
 
@@ -42,6 +44,22 @@ var HandleBars = (function(){
     publishedDateArray.splice(4,2)
     var publishedDateString = publishedDateArray.join(" ")
     return publishedDateString
+  }
+
+  function createObjectWithCleanedData(entry){
+    var cleanedEntryObject = new Object
+    var titleAndAuthor = separateAuthorAndTitle(entry.title)
+    cleanedEntryObject.title = titleAndAuthor[0]
+    cleanedEntryObject.author = titleAndAuthor[1]
+
+    cleanedEntryObject.content = removeImgTagFromContent(entry.content)
+
+    cleanedEntryObject.contentSnippet = entry.contentSnippet
+
+    cleanedEntryObject.publishedDate = removeHoursSecondsAndTimeZone(entry.publishedDate)
+
+    cleanedEntryObject.url = entry.mediaGroups[0].contents[0].url
+    return cleanedEntryObject
   }
 
   return {
