@@ -24,6 +24,12 @@ var HandleBars = (function(){
     return contentArray[0]
   }
 
+  function grabImgUrl(mediaGroup){
+    var imgUrl = mediaGroup[0].contents[0].thumbnails["0"].url
+    console.log(mediaGroup[0].contents[0].thumbnails["0"])
+    return imgUrl
+  }
+
   function removeHoursSecondsAndTimeZone(datePublished){
     var publishedDateArray = datePublished.split(" ");
     publishedDateArray.splice(4,2);
@@ -37,7 +43,9 @@ var HandleBars = (function(){
     cleanedEntryObject.title = titleAndAuthor[0];
     cleanedEntryObject.author = titleAndAuthor[1];
 
-    cleanedEntryObject.content = removeImgTagFromContent(entry.content);
+    cleanedEntryObject.content = removeImgTagFromContent(entry.content)
+
+    cleanedEntryObject.imgUrl = grabImgUrl(entry.mediaGroups)
 
     cleanedEntryObject.contentSnippet = entry.contentSnippet;
 

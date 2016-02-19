@@ -65,20 +65,21 @@
 
     <!-- handlebars template -->
     <script id="feed-template" type="text/x-handlebars-template">
-      <li class="collection-item">
-        <h6 class="title large bold">{{title}}</h6>
-        <h6 class="small italic">{{author}}</h6>
-        <h6 class="small italic">{{publishedDate}}</h6>
-        </p>
+      <li class="collection-item top-padding-li">
+        <img src="{{imgUrl}}" height="60" width ="60" alt="Image Not Available" class="circle secondary-content top-margin-img">
+        <div class="clickInThisBox">
+          <h6 class="title large bold no-top-margin">{{title}}</h6>
+          <h6 class="small italic">{{author}}</h6>
+          <h6 class="small italic">{{publishedDate}}</h6>
+        </div>
         <div class="snippet medium content-top-margin">{{contentSnippet}}</div>
 
         <div class="onClickShow hide">
           <p class="description text-color medium content-top-margin">{{content}}</p>
-          <video class="responsive-video" width="853" height="480" preload="metadata" controls>
+          <video class="responsive-video" width="1500" height="480" preload="metadata" poster="{{imgUrl}}" controls>
             <source src="{{url}}" type="video/mp4">
           </video>
         </div>
-
       </li>
     </script>
 

@@ -45,3 +45,18 @@
   height: 600px;
   margin-bottom: 4%;
 }
+
+.top-padding-li {
+  /*margin-top: 7.5;*/
+}
+
+.no-top-margin {
+  margin-top: 0;
+}
+
+/*video*/
+
+h6 {
+  cursor: pointer;
+  cursor: hand;
+}
